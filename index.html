@@ -9,6 +9,395 @@
       The content of the title element is displayed in the browser tab, in
       favorites and in search-engine results.
     </p>
-    <script src="https://app.secureprivacy.ai/script/69648b708d5833b164d783ff.js"></script>
+    <footer>footer</footer>
+    <!-- Cookie Consent Script (Generated 2026-01-12T07:35:50.659Z) -->
+    <script>
+      (function () {
+        const CONFIG = {
+          token:
+            "U0ZNeU5UWS5nMmdEZEFBQUFBSnRBQUFBQzJSdmJXRnBibDl1WVcxbGJRQUFBQXByY21WbGRHa3VZMjl0YlFBQUFBOXZjbWRoYm1sNllYUnBiMjVmYVdSdEFBQUFKREpsWkdaaVptWTJMVGcxTXpNdE5HRmxPQzFpWTJVM0xUWTVPVGRsWldZME0yTTVPVzRHQUtuOTdveWJBV0lKWmdHQS5nclo1SndIdF9BbnY4dmk3YnozRm1ySlFhUUFDYWZLbmZyVUlWT3REd3E4",
+          themeColor: "#155265",
+          bannerTitle: "Cookie Notice",
+          bannerDescription:
+            'Kreeti uses Strictly Necessary Cookies and similar technologies to operate this website and to provide you with a more personalized user experience. In addition to Strictly Necessary Cookies, Kreeti uses optional cookies to enhance and personalize your experience, conduct analytics such as count visits and traffic sources, provide advertisements and interact with third parties.By clicking "Accept All Cookies" you agree to the placement of optional cookies on your device. You can manage your cookie preferences or withdraw your consent to the use of optional cookies at any time by clicking the "Customize Cookies" link. Depending on your selected cookie preferences, the full functionality or personalized user experience of this website will be available.',
+          privacyUrl: "https://www.kreeti.com/privacy-policy",
+          endpoint: "http://localhost:4000/api/cookie_consent",
+          consentExpiryDays: 90,
+          cookies: [
+            {
+              name: "Cookie 4",
+              category: "FUNCTIONAL",
+              description: "desc cookie 4",
+              provider: "amazon",
+              duration: "3 years",
+            },
+            {
+              name: "cookie 3",
+              category: "NECESSARY",
+              description: "desc cookie",
+              provider: "google",
+              duration: "3 years",
+            },
+            {
+              name: "cookie 2",
+              category: "ANALYTICS",
+              description: "desc cookie",
+              provider: "google",
+              duration: "2 years",
+            },
+            {
+              name: "cookie 1",
+              category: "MARKETING",
+              description: "desc cookie",
+              provider: "google",
+              duration: "2 years",
+            },
+          ],
+          categories: ["NECESSARY", "ANALYTICS", "MARKETING", "FUNCTIONAL"],
+          consentVersion: 1,
+        };
+
+        const COOKIE_NAME = "cookie_consent_" + CONFIG.token;
+
+        function setCookie(name, value, days) {
+          const expires = new Date(Date.now() + days * 86400000).toUTCString();
+          document.cookie =
+            name +
+            "=" +
+            encodeURIComponent(value) +
+            "; expires=" +
+            expires +
+            "; path=/; SameSite=Lax";
+        }
+
+        function getCookie(name) {
+          const match = document.cookie.match(
+            new RegExp("(^| )" + name + "=([^;]+)")
+          );
+          return match ? decodeURIComponent(match[2]) : null;
+        }
+
+        function deleteCookie(name) {
+          document.cookie =
+            name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        class CookieConsent {
+          constructor() {
+            this.preferences = this.loadPreferences();
+            this.init();
+          }
+
+          init() {
+            this.injectStyles();
+            if (!this.hasUserConsented()) {
+              this.showBanner();
+            } else {
+              this.applyConsent();
+            }
+            this.addSettingsLink();
+          }
+
+          injectStyles() {
+            if (document.getElementById("cookie-consent-styles")) return;
+            var style = document.createElement("style");
+            style.id = "cookie-consent-styles";
+            style.textContent =
+              "  .cookie-banner {    position: fixed;    bottom: 0;    left: 0;    right: 0;    background: white;    border-top: 1px solid #e5e7eb;    padding: 24px;    z-index: 9999;    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;  }  .cookie-banner.hidden {    display: none;  }  .cookie-banner-content {    max-width: 1200px;    margin: 0 auto;    display: flex;    justify-content: space-between;    align-items: center;    gap: 24px;  }  .cookie-banner-text h2 {    margin: 0 0 8px 0;    font-size: 18px;    font-weight: 600;    color: #111;  }  .cookie-banner-text p {    margin: 0;    font-size: 14px;    color: #666;    line-height: 1.5;  }  .cookie-banner-actions {    display: flex;    gap: 12px;    flex-shrink: 0;  }  .cookie-btn {    padding: 10px 20px;    border: none;    border-radius: 6px;    font-size: 14px;    font-weight: 500;    cursor: pointer;    transition: all 0.2s;  }  .cookie-btn-primary {    background: #155265;    color: white;  }  .cookie-btn-primary:hover {    opacity: 0.9;    transform: translateY(-1px);  }  .cookie-btn-secondary {    background: #f3f4f6;    color: #111;  }  .cookie-btn-secondary:hover {    background: #e5e7eb;  }  .cookie-btn-tertiary {    background: white;    color: #111;    border: 1px solid #d1d5db;  }  .cookie-btn-tertiary:hover {    background: #f9fafb;  }  .preference-overlay {    position: fixed;    top: 0;    left: 0;    right: 0;    bottom: 0;    background: rgba(0, 0, 0, 0.3);    z-index: 9998;  }  .cookie-preference-panel {    position: fixed;    right: 0;    top: 0;    bottom: 0;    width: 420px;    background: white;    box-shadow: -2px 0 20px rgba(0, 0, 0, 0.15);    z-index: 10000;    overflow-y: auto;    padding: 32px;    animation: slideIn 0.3s ease-out;  }  @keyframes slideIn {    from { transform: translateX(100%); opacity: 0; }    to { transform: translateX(0); opacity: 1; }  }  .cookie-preference-panel.hidden {    display: none;  }  .preference-header {    display: flex;    justify-content: space-between;    align-items: center;    margin-bottom: 32px;  }  .preference-header h2 {    margin: 0;    font-size: 24px;    font-weight: 600;    color: #111;  }  .preference-close {    background: none;    border: none;    font-size: 32px;    cursor: pointer;    color: #999;    line-height: 1;  }  .preference-close:hover {    color: #111;  }  .category-section {    margin-bottom: 32px;    padding-bottom: 24px;    border-bottom: 1px solid #e5e7eb;  }  .category-section:last-of-type {    border-bottom: none;  }  .category-header {    display: flex;    justify-content: space-between;    align-items: flex-start;    margin-bottom: 16px;  }  .category-header h3 {    margin: 0;    font-size: 16px;    font-weight: 600;    color: #111;    flex: 1;  }  .toggle-switch {    width: 48px;    height: 28px;    background: #d1d5db;    border: none;    border-radius: 14px;    position: relative;    cursor: pointer;    transition: background 0.2s;    flex-shrink: 0;  }  .toggle-switch:disabled {    cursor: not-allowed;    opacity: 0.6;  }  .toggle-switch.active {    background: #155265;  }  .toggle-switch::after {    content: '';    position: absolute;    width: 24px;    height: 24px;    background: white;    border-radius: 12px;    top: 2px;    left: 2px;    transition: left 0.2s;    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  }  .toggle-switch.active::after {    left: 22px;  }  .category-description {    font-size: 13px;    color: #666;    margin-bottom: 12px;    line-height: 1.5;  }  .cookie-list {    display: grid;    gap: 8px;    margin-top: 12px;  }  .cookie-item {    background: #f9fafb;    border: 1px solid #e5e7eb;    border-radius: 6px;    padding: 12px;    font-size: 12px;  }  .cookie-item-name {    font-weight: 600;    color: #111;    margin-bottom: 4px;  }  .cookie-item-details {    color: #666;    line-height: 1.4;    font-size: 11px;  }  .cookie-item-provider {    font-weight: 500;    color: #111;  }  .preference-footer {    display: flex;    gap: 12px;    margin-top: 32px;    padding-top: 24px;    border-top: 1px solid #e5e7eb;  }  .preference-footer button {    flex: 1;    padding: 12px;    border: none;    border-radius: 6px;    font-weight: 500;    font-size: 14px;    cursor: pointer;    transition: all 0.2s;  }  .save-btn {    background: #155265;    color: white;  }  .save-btn:hover {    opacity: 0.9;    transform: translateY(-1px);  }  .close-btn {    background: #f3f4f6;    color: #111;    border: 1px solid #e5e7eb;  }  .close-btn:hover {    background: #e5e7eb;  }  .cookie-settings-link {    font-size: 12px;    color: #666;    cursor: pointer;    text-decoration: none;  }  .cookie-settings-link:hover {    color: #111;    text-decoration: underline;  }  @media (max-width: 768px) {    .cookie-banner-content {      flex-direction: column;      align-items: flex-start;    }    .cookie-banner-actions {      width: 100%;      flex-direction: column;    }    .cookie-banner-actions button {      width: 100%;    }    .cookie-preference-panel {      width: 100%;      padding: 24px;    }  }";
+            document.head.appendChild(style);
+          }
+
+          hasUserConsented() {
+            const stored = getCookie(COOKIE_NAME);
+            if (!stored) return false;
+            try {
+              return Boolean(JSON.parse(stored).preferences);
+            } catch {
+              return false;
+            }
+          }
+
+          loadPreferences() {
+            const stored = getCookie(COOKIE_NAME);
+            if (stored) {
+              try {
+                return JSON.parse(stored).preferences;
+              } catch {}
+            }
+            return {
+              necessary: true,
+              analytics: false,
+              marketing: false,
+              functional: false,
+            };
+          }
+
+          savePreferences(prefs) {
+            prefs.necessary = true;
+
+            setCookie(
+              COOKIE_NAME,
+              JSON.stringify({
+                preferences: prefs,
+                timestamp: new Date().toISOString(),
+              }),
+              CONFIG.consentExpiryDays
+            );
+            this.recordConsent(prefs);
+          }
+
+          recordConsent(prefs) {
+            if (!CONFIG.endpoint) return;
+
+            fetch(CONFIG.endpoint, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-Consent-Token": CONFIG.token,
+              },
+              body: JSON.stringify({
+                preferences: prefs,
+                consentVersion: CONFIG.consentVersion,
+                timestamp: new Date().toISOString(),
+              }),
+            }).catch(() => {});
+          }
+
+          showBanner() {
+            if (document.getElementById("cookie-banner")) return;
+
+            var banner = document.createElement("div");
+            banner.id = "cookie-banner";
+            banner.className = "cookie-banner";
+            banner.innerHTML =
+              '<div class="cookie-banner-content">' +
+              '<div class="cookie-banner-text">' +
+              "<h2>" +
+              CONFIG.bannerTitle +
+              "</h2>" +
+              "<p>" +
+              CONFIG.bannerDescription +
+              "</p>" +
+              (CONFIG.privacyUrl
+                ? '<a href="' +
+                  CONFIG.privacyUrl +
+                  '" target="_blank">Privacy Policy</a>'
+                : "") +
+              "</div>" +
+              '<div class="cookie-banner-actions">' +
+              '<button class="cookie-btn cookie-btn-tertiary" id="reject-btn">Reject Optional</button>' +
+              '<button class="cookie-btn cookie-btn-secondary" id="customize-btn">Customize</button>' +
+              '<button class="cookie-btn cookie-btn-primary" id="accept-all-btn">Accept All</button>' +
+              "</div>" +
+              "</div>";
+
+            document.body.appendChild(banner);
+
+            document.getElementById("accept-all-btn").onclick = () =>
+              this.acceptAll();
+            document.getElementById("reject-btn").onclick = () =>
+              this.rejectOptional();
+            document.getElementById("customize-btn").onclick = () =>
+              this.showPreferences();
+          }
+
+          showPreferences() {
+            var overlay = document.getElementById("cookie-overlay");
+            if (!overlay) {
+              overlay = document.createElement("div");
+              overlay.id = "cookie-overlay";
+              overlay.className = "preference-overlay";
+              overlay.onclick = (e) => {
+                if (e.target === overlay) this.saveAndClose();
+              };
+              document.body.appendChild(overlay);
+            }
+
+            var panel = document.getElementById("cookie-preferences");
+            if (!panel) {
+              panel = document.createElement("div");
+              panel.id = "cookie-preferences";
+              panel.className = "cookie-preference-panel";
+              panel.innerHTML =
+                '<div class="preference-header">' +
+                "<h2>Cookie Preferences</h2>" +
+                '<button class="preference-close" id="prefs-close-btn">&times;</button>' +
+                "</div>" +
+                '<div id="prefs-categories"></div>' +
+                '<div class="preference-footer">' +
+                '<button class="save-btn" id="prefs-save-btn">Save Preferences</button>' +
+                '<button class="close-btn" id="prefs-cancel-btn">Cancel</button>' +
+                "</div>";
+
+              document.body.appendChild(panel);
+
+              document.getElementById("prefs-close-btn").onclick =
+                document.getElementById("prefs-cancel-btn").onclick = () =>
+                  this.saveAndClose();
+
+              document.getElementById("prefs-save-btn").onclick = () => {
+                var prefs = {};
+                CONFIG.categories.forEach((cat) => {
+                  var toggle = document.getElementById(
+                    "toggle-" + cat.toLowerCase()
+                  );
+
+                  prefs[cat.toLowerCase()] =
+                    cat === "NECESSARY"
+                      ? true
+                      : toggle
+                      ? toggle.checked
+                      : false;
+                });
+
+                this.preferences = prefs;
+                this.saveAndClose();
+              };
+            }
+
+            this.renderPreferences();
+          }
+
+          renderPreferences() {
+            var container = document.getElementById("prefs-categories");
+            container.innerHTML = "";
+
+            CONFIG.categories.forEach((cat) => {
+              var pref =
+                cat === "NECESSARY"
+                  ? true
+                  : this.preferences[cat.toLowerCase()];
+
+              var cookiesInCategory = CONFIG.cookies.filter(
+                (c) => c.category === cat
+              );
+
+              var div = document.createElement("div");
+              div.className = "category-section";
+
+              var cookieItemsHtml = "";
+              cookiesInCategory.forEach((c) => {
+                cookieItemsHtml +=
+                  '<div class="cookie-item">' +
+                  '<div class="cookie-item-name">' +
+                  c.name +
+                  "</div>" +
+                  '<div class="cookie-item-provider">Provider: ' +
+                  c.provider +
+                  "</div>" +
+                  '<div class="cookie-item-details">' +
+                  c.description +
+                  " (Duration: " +
+                  c.duration +
+                  ")" +
+                  "</div>" +
+                  "</div>";
+              });
+
+              div.innerHTML =
+                '<div class="category-header">' +
+                "<h3>" +
+                cat.charAt(0) +
+                cat.slice(1).toLowerCase() +
+                "</h3>" +
+                '<label class="toggle-switch ' +
+                (pref ? "active" : "") +
+                '">' +
+                '<input type="checkbox" id="toggle-' +
+                cat.toLowerCase() +
+                '" ' +
+                (pref ? "checked" : "") +
+                (cat === "NECESSARY" ? " disabled" : "") +
+                " />" +
+                "</label>" +
+                "</div>" +
+                '<div class="category-description">' +
+                (cat === "NECESSARY"
+                  ? "Required cookies. Always enabled."
+                  : "Optional cookies for " +
+                    cat.toLowerCase() +
+                    " purposes.") +
+                "</div>" +
+                '<div class="cookie-list">' +
+                cookieItemsHtml +
+                "</div>";
+
+              container.appendChild(div);
+
+              if (cat !== "NECESSARY") {
+                var toggleLabel = div.querySelector(".toggle-switch");
+                var toggleInput = div.querySelector("input");
+                toggleLabel.onclick = () => {
+                  toggleInput.checked = !toggleInput.checked;
+                  toggleLabel.classList.toggle("active", toggleInput.checked);
+                };
+              }
+            });
+          }
+
+          acceptAll() {
+            this.preferences = {
+              necessary: true,
+              analytics: true,
+              marketing: true,
+              functional: true,
+            };
+            this.saveAndClose();
+          }
+
+          rejectOptional() {
+            this.preferences = {
+              necessary: true,
+              analytics: false,
+              marketing: false,
+              functional: false,
+            };
+            this.saveAndClose();
+          }
+
+          saveAndClose() {
+            this.savePreferences(this.preferences);
+            document.getElementById("cookie-banner")?.remove();
+            document.getElementById("cookie-preferences")?.remove();
+            document.getElementById("cookie-overlay")?.remove();
+            this.applyConsent();
+          }
+
+          applyConsent() {
+            if (this.preferences.analytics) console.log("Analytics enabled");
+            if (this.preferences.marketing) console.log("Marketing enabled");
+            if (this.preferences.functional) console.log("Functional enabled");
+          }
+
+          addSettingsLink() {
+            if (document.getElementById("cookie-settings-link")) return;
+            var footer = document.querySelector("footer");
+            if (!footer) return;
+
+            var link = document.createElement("a");
+            link.id = "cookie-settings-link";
+            link.href = "#";
+            link.textContent = "Cookie Settings";
+            link.className = "cookie-settings-link";
+            link.onclick = (e) => {
+              e.preventDefault();
+              deleteCookie(COOKIE_NAME);
+              this.showBanner();
+            };
+
+            footer.appendChild(link);
+          }
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener(
+            "DOMContentLoaded",
+            () => new CookieConsent()
+          );
+        } else {
+          new CookieConsent();
+        }
+      })();
+    </script>
   </body>
 </html>
