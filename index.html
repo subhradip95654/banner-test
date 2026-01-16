@@ -13,6 +13,9 @@
    <!-- Google tag (gtag.js) -->
 
 <!-- Kawach Cookie Consent Script (Generated 2026-01-16T12:24:00.450Z) -->
+Mahesh
+
+<!-- Kawach Cookie Consent Script (Generated 2026-01-16T12:24:08.291Z) -->
 <script>
   (function() {
     // Initialize dataLayer for GTM/GA4
@@ -23,54 +26,374 @@
     gtag('consent', 'default', {"ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied","analytics_storage":"denied","functionality_storage":"denied","security_storage":"denied","personalization_storage":"denied","wait_for_update":500});
 
     // 2. Initialize Kawach consent logic
-    const CONFIG = {
-  "token": "U0ZNeU5UWS5nMmdEZEFBQUFBSnRBQUFBQzJSdmJXRnBibDl1WVcxbGJRQUFBQXByY21WbGRHa3VZMjl0YlFBQUFBOXZjbWRoYm1sNllYUnBiMjVmYVdSdEFBQUFKREpsWkdaaVptWTJMVGcxTXpNdE5HRmxPQzFpWTJVM0xUWTVPVGRsWldZME0yTTVPVzRHQUtuOTdveWJBV0lKWmdHQS5nclo1SndIdF9BbnY4dmk3YnozRm1ySlFhUUFDYWZLbmZyVUlWT3REd3E4",
-  "themeColor": "#155265",
-  "bannerTitle": "Cookie Notice",
-  "bannerDescription": "Kreeti uses Strictly Necessary Cookies and similar technologies to operate this website and to provide you with a more personalized user experience. In addition to Strictly Necessary Cookies, Kreeti uses optional cookies to enhance and personalize your experience, conduct analytics such as count visits and traffic sources, provide advertisements and interact with third parties.By clicking \"Accept All Cookies\" you agree to the placement of optional cookies on your device. You can manage your cookie preferences or withdraw your consent to the use of optional cookies at any time by clicking the \"Customize Cookies\" link. Depending on your selected cookie preferences, the full functionality or personalized user experience of this website will be available.",
-  "privacyUrl": "https://www.kreeti.com/privacy-policy",
-  "endpoint": "http://localhost:4000/api/cookie_consent",
-  "consentExpiryDays": 90,
-  "cookies": [
+    const CONFIG = {"token":"U0ZNeU5UWS5nMmdEZEFBQUFBSnRBQUFBQzJSdmJXRnBibDl1WVcxbGJRQUFBQXByY21WbGRHa3VZMjl0YlFBQUFBOXZjbWRoYm1sNllYUnBiMjVmYVdSdEFBQUFKREpsWkdaaVptWTJMVGcxTXpNdE5HRmxPQzFpWTJVM0xUWTVPVGRsWldZME0yTTVPVzRHQUVhYl9yR2JBV0lKWmdHQS5MTjhHZWtZZjN0aThXYkJVWVlJeU9EUnlQcHhmbC1EZDdNdVl5Vnl0RmFB","themeColor":"#0891bc","bannerTitle":"Cookie banner title","bannerDescription":"We use cookies to improve your experience.","privacyUrl":null,"endpoint":"http://localhost:4000/api/cookie_consent","consentExpiryDays":365,"cookies":[{"name":"cookie 1","category":"NECESSARY","description":"Cookie 1 for necessary","provider":"meta","duration":"1 year"}],"categories":["NECESSARY","ANALYTICS","MARKETING","FUNCTIONAL"],"consentVersion":2,"css":"\n  .cookie-banner {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    background: white;\n    border-top: 1px solid #e5e7eb;\n    padding: 24px;\n    z-index: 9999;\n    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  }\n\n  .cookie-banner.hidden {\n    display: none;\n  }\n\n  .cookie-banner-content {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 24px;\n  }\n\n  .cookie-banner-text h2 {\n    margin: 0 0 8px 0;\n    font-size: 18px;\n    font-weight: 600;\n    color: #111;\n  }\n\n  .cookie-banner-text p {\n    margin: 0;\n    font-size: 14px;\n    color: #666;\n    line-height: 1.5;\n  }\n\n  .cookie-banner-actions {\n    display: flex;\n    gap: 12px;\n    flex-shrink: 0;\n  }\n\n  .cookie-btn {\n    padding: 10px 20px;\n    border: none;\n    border-radius: 6px;\n    font-size: 14px;\n    font-weight: 500;\n    cursor: pointer;\n    transition: all 0.2s;\n  }\n\n  .cookie-btn-primary {\n    background: #0891bc;\n    color: white;\n  }\n\n  .cookie-btn-primary:hover {\n    opacity: 0.9;\n    transform: translateY(-1px);\n  }\n\n  .cookie-btn-secondary {\n    background: #f3f4f6;\n    color: #111;\n  }\n\n  .cookie-btn-secondary:hover {\n    background: #e5e7eb;\n  }\n\n  .cookie-btn-tertiary {\n    background: white;\n    color: #111;\n    border: 1px solid #d1d5db;\n  }\n\n  .cookie-btn-tertiary:hover {\n    background: #f9fafb;\n  }\n\n  .preference-overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background: rgba(0, 0, 0, 0.3);\n    z-index: 9998;\n  }\n\n  .cookie-preference-panel {\n    position: fixed;\n    right: 0;\n    top: 0;\n    bottom: 0;\n    width: 420px;\n    background: white;\n    box-shadow: -2px 0 20px rgba(0, 0, 0, 0.15);\n    z-index: 10000;\n    overflow-y: auto;\n    padding: 32px;\n    animation: slideIn 0.3s ease-out;\n  }\n\n  @keyframes slideIn {\n    from { transform: translateX(100%); opacity: 0; }\n    to { transform: translateX(0); opacity: 1; }\n  }\n\n  .cookie-preference-panel.hidden {\n    display: none;\n  }\n\n  .preference-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 32px;\n  }\n\n  .preference-header h2 {\n    margin: 0;\n    font-size: 24px;\n    font-weight: 600;\n    color: #111;\n  }\n\n  .preference-close {\n    background: none;\n    border: none;\n    font-size: 32px;\n    cursor: pointer;\n    color: #999;\n    line-height: 1;\n  }\n\n  .preference-close:hover {\n    color: #111;\n  }\n\n  .category-section {\n    margin-bottom: 32px;\n    padding-bottom: 24px;\n    border-bottom: 1px solid #e5e7eb;\n  }\n\n  .category-section:last-of-type {\n    border-bottom: none;\n  }\n\n  .category-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n    margin-bottom: 16px;\n  }\n\n  .category-header h3 {\n    margin: 0;\n    font-size: 16px;\n    font-weight: 600;\n    color: #111;\n    flex: 1;\n  }\n\n  .toggle-switch {\n    width: 48px;\n    height: 28px;\n    background: #d1d5db;\n    border: none;\n    border-radius: 14px;\n    position: relative;\n    cursor: pointer;\n    transition: background 0.2s;\n    flex-shrink: 0;\n  }\n\n  .toggle-switch:disabled {\n    cursor: not-allowed;\n    opacity: 0.6;\n  }\n\n  .toggle-switch.active {\n    background: #0891bc;\n  }\n\n  .toggle-switch::after {\n    content: '';\n    position: absolute;\n    width: 24px;\n    height: 24px;\n    background: white;\n    border-radius: 12px;\n    top: 2px;\n    left: 2px;\n    transition: left 0.2s;\n    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  }\n\n  .toggle-switch.active::after {\n    left: 22px;\n  }\n\n  .category-description {\n    font-size: 13px;\n    color: #666;\n    margin-bottom: 12px;\n    line-height: 1.5;\n  }\n\n  .cookie-list {\n    display: grid;\n    gap: 8px;\n    margin-top: 12px;\n  }\n\n  .cookie-item {\n    background: #f9fafb;\n    border: 1px solid #e5e7eb;\n    border-radius: 6px;\n    padding: 12px;\n    font-size: 12px;\n  }\n\n  .cookie-item-name {\n    font-weight: 600;\n    color: #111;\n    margin-bottom: 4px;\n  }\n\n  .cookie-item-details {\n    color: #666;\n    line-height: 1.4;\n    font-size: 11px;\n  }\n\n  .cookie-item-provider {\n    font-weight: 500;\n    color: #111;\n  }\n\n  .preference-footer {\n    display: flex;\n    gap: 12px;\n    margin-top: 32px;\n    padding-top: 24px;\n    border-top: 1px solid #e5e7eb;\n  }\n\n  .preference-footer button {\n    flex: 1;\n    padding: 12px;\n    border: none;\n    border-radius: 6px;\n    font-weight: 500;\n    font-size: 14px;\n    cursor: pointer;\n    transition: all 0.2s;\n  }\n\n  .save-btn {\n    background: #0891bc;\n    color: white;\n  }\n\n  .save-btn:hover {\n    opacity: 0.9;\n    transform: translateY(-1px);\n  }\n\n  .close-btn {\n    background: #f3f4f6;\n    color: #111;\n    border: 1px solid #e5e7eb;\n  }\n\n  .close-btn:hover {\n    background: #e5e7eb;\n  }\n\n  .cookie-settings-link {\n    font-size: 12px;\n    color: #666;\n    cursor: pointer;\n    text-decoration: none;\n  }\n\n  .cookie-settings-link:hover {\n    color: #111;\n    text-decoration: underline;\n  }\n\n  @media (max-width: 768px) {\n    .cookie-banner-content {\n      flex-direction: column;\n      align-items: flex-start;\n    }\n\n    .cookie-banner-actions {\n      width: 100%;\n      flex-direction: column;\n    }\n\n    .cookie-banner-actions button {\n      width: 100%;\n    }\n\n    .cookie-preference-panel {\n      width: 100%;\n      padding: 24px;\n    }\n  }\n"};
+    (CONFIG => {
+  const COOKIE_NAME = 'cookie_consent_' + CONFIG.token;
+
+  function gtag() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(arguments);
+  }
+
+  function setCookie(name, value, days) {
+    const expires = new Date(Date.now() + days * 86400000).toUTCString();
+    document.cookie =
+      name +
+      '=' +
+      encodeURIComponent(value) +
+      '; expires=' +
+      expires +
+      '; path=/; SameSite=Lax';
+  }
+
+  function getCookie(name) {
+    const match = document.cookie.match(
+      new RegExp('(^| )' + name + '=([^;]+)')
+    );
+    return match ? decodeURIComponent(match[2]) : null;
+  }
+
+  // 2. GCM v2 Signal Mapping - All required signals
+  const GOOGLE_CONSENT_MAP = [
     {
-      "name": "Cookie 4",
-      "category": "FUNCTIONAL",
-      "description": "desc cookie 4",
-      "provider": "amazon",
-      "duration": "3 years"
+      prefKey: 'analytics',
+      signals: ['analytics_storage'],
     },
     {
-      "name": "cookie 3",
-      "category": "NECESSARY",
-      "description": "desc cookie",
-      "provider": "google",
-      "duration": "3 years"
+      prefKey: 'marketing',
+      signals: ['ad_storage', 'ad_user_data', 'ad_personalization'],
     },
     {
-      "name": "cookie 2",
-      "category": "ANALYTICS",
-      "description": "desc cookie",
-      "provider": "google",
-      "duration": "2 years"
+      prefKey: 'functional',
+      signals: [
+        'functionality_storage',
+        'security_storage',
+        'personalization_storage',
+      ],
     },
-    {
-      "name": "cookie 1",
-      "category": "MARKETING",
-      "description": "desc cookie",
-      "provider": "google",
-      "duration": "2 years"
+  ];
+
+  function buildGoogleConsentPayload(preferences) {
+    const payload = {};
+    GOOGLE_CONSENT_MAP.forEach(({ prefKey, signals }) => {
+      const value = preferences[prefKey] ? 'granted' : 'denied';
+      signals.forEach(signal => {
+        payload[signal] = value;
+      });
+    });
+    return payload;
+  }
+
+  function updateGoogleConsent(preferences) {
+    gtag('consent', 'update', buildGoogleConsentPayload(preferences));
+  }
+
+  class CookieConsent {
+    constructor() {
+      this.preferences = this.loadPreferences();
+      this.init();
     }
-  ],
-  "categories": [
-    "NECESSARY",
-    "ANALYTICS",
-    "MARKETING",
-    "FUNCTIONAL"
-  ],
-  "consentVersion": 2,
-  "css": "\n  .cookie-banner {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    background: white;\n    border-top: 1px solid #e5e7eb;\n    padding: 24px;\n    z-index: 9999;\n    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  }\n\n  .cookie-banner.hidden {\n    display: none;\n  }\n\n  .cookie-banner-content {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 24px;\n  }\n\n  .cookie-banner-text h2 {\n    margin: 0 0 8px 0;\n    font-size: 18px;\n    font-weight: 600;\n    color: #111;\n  }\n\n  .cookie-banner-text p {\n    margin: 0;\n    font-size: 14px;\n    color: #666;\n    line-height: 1.5;\n  }\n\n  .cookie-banner-actions {\n    display: flex;\n    gap: 12px;\n    flex-shrink: 0;\n  }\n\n  .cookie-btn {\n    padding: 10px 20px;\n    border: none;\n    border-radius: 6px;\n    font-size: 14px;\n    font-weight: 500;\n    cursor: pointer;\n    transition: all 0.2s;\n  }\n\n  .cookie-btn-primary {\n    background: #155265;\n    color: white;\n  }\n\n  .cookie-btn-primary:hover {\n    opacity: 0.9;\n    transform: translateY(-1px);\n  }\n\n  .cookie-btn-secondary {\n    background: #f3f4f6;\n    color: #111;\n  }\n\n  .cookie-btn-secondary:hover {\n    background: #e5e7eb;\n  }\n\n  .cookie-btn-tertiary {\n    background: white;\n    color: #111;\n    border: 1px solid #d1d5db;\n  }\n\n  .cookie-btn-tertiary:hover {\n    background: #f9fafb;\n  }\n\n  .preference-overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background: rgba(0, 0, 0, 0.3);\n    z-index: 9998;\n  }\n\n  .cookie-preference-panel {\n    position: fixed;\n    right: 0;\n    top: 0;\n    bottom: 0;\n    width: 420px;\n    background: white;\n    box-shadow: -2px 0 20px rgba(0, 0, 0, 0.15);\n    z-index: 10000;\n    overflow-y: auto;\n    padding: 32px;\n    animation: slideIn 0.3s ease-out;\n  }\n\n  @keyframes slideIn {\n    from { transform: translateX(100%); opacity: 0; }\n    to { transform: translateX(0); opacity: 1; }\n  }\n\n  .cookie-preference-panel.hidden {\n    display: none;\n  }\n\n  .preference-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 32px;\n  }\n\n  .preference-header h2 {\n    margin: 0;\n    font-size: 24px;\n    font-weight: 600;\n    color: #111;\n  }\n\n  .preference-close {\n    background: none;\n    border: none;\n    font-size: 32px;\n    cursor: pointer;\n    color: #999;\n    line-height: 1;\n  }\n\n  .preference-close:hover {\n    color: #111;\n  }\n\n  .category-section {\n    margin-bottom: 32px;\n    padding-bottom: 24px;\n    border-bottom: 1px solid #e5e7eb;\n  }\n\n  .category-section:last-of-type {\n    border-bottom: none;\n  }\n\n  .category-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n    margin-bottom: 16px;\n  }\n\n  .category-header h3 {\n    margin: 0;\n    font-size: 16px;\n    font-weight: 600;\n    color: #111;\n    flex: 1;\n  }\n\n  .toggle-switch {\n    width: 48px;\n    height: 28px;\n    background: #d1d5db;\n    border: none;\n    border-radius: 14px;\n    position: relative;\n    cursor: pointer;\n    transition: background 0.2s;\n    flex-shrink: 0;\n  }\n\n  .toggle-switch:disabled {\n    cursor: not-allowed;\n    opacity: 0.6;\n  }\n\n  .toggle-switch.active {\n    background: #155265;\n  }\n\n  .toggle-switch::after {\n    content: '';\n    position: absolute;\n    width: 24px;\n    height: 24px;\n    background: white;\n    border-radius: 12px;\n    top: 2px;\n    left: 2px;\n    transition: left 0.2s;\n    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  }\n\n  .toggle-switch.active::after {\n    left: 22px;\n  }\n\n  .category-description {\n    font-size: 13px;\n    color: #666;\n    margin-bottom: 12px;\n    line-height: 1.5;\n  }\n\n  .cookie-list {\n    display: grid;\n    gap: 8px;\n    margin-top: 12px;\n  }\n\n  .cookie-item {\n    background: #f9fafb;\n    border: 1px solid #e5e7eb;\n    border-radius: 6px;\n    padding: 12px;\n    font-size: 12px;\n  }\n\n  .cookie-item-name {\n    font-weight: 600;\n    color: #111;\n    margin-bottom: 4px;\n  }\n\n  .cookie-item-details {\n    color: #666;\n    line-height: 1.4;\n    font-size: 11px;\n  }\n\n  .cookie-item-provider {\n    font-weight: 500;\n    color: #111;\n  }\n\n  .preference-footer {\n    display: flex;\n    gap: 12px;\n    margin-top: 32px;\n    padding-top: 24px;\n    border-top: 1px solid #e5e7eb;\n  }\n\n  .preference-footer button {\n    flex: 1;\n    padding: 12px;\n    border: none;\n    border-radius: 6px;\n    font-weight: 500;\n    font-size: 14px;\n    cursor: pointer;\n    transition: all 0.2s;\n  }\n\n  .save-btn {\n    background: #155265;\n    color: white;\n  }\n\n  .save-btn:hover {\n    opacity: 0.9;\n    transform: translateY(-1px);\n  }\n\n  .close-btn {\n    background: #f3f4f6;\n    color: #111;\n    border: 1px solid #e5e7eb;\n  }\n\n  .close-btn:hover {\n    background: #e5e7eb;\n  }\n\n  .cookie-settings-link {\n    font-size: 12px;\n    color: #666;\n    cursor: pointer;\n    text-decoration: none;\n  }\n\n  .cookie-settings-link:hover {\n    color: #111;\n    text-decoration: underline;\n  }\n\n  @media (max-width: 768px) {\n    .cookie-banner-content {\n      flex-direction: column;\n      align-items: flex-start;\n    }\n\n    .cookie-banner-actions {\n      width: 100%;\n      flex-direction: column;\n    }\n\n    .cookie-banner-actions button {\n      width: 100%;\n    }\n\n    .cookie-preference-panel {\n      width: 100%;\n      padding: 24px;\n    }\n  }\n"
-};
-    (e=>{const t="cookie_consent_"+e.token;function r(){window.dataLayer=window.dataLayer||[],window.dataLayer.push(arguments)}function n(u,d,f){const h=new Date(Date.now()+f*864e5).toUTCString();document.cookie=u+"="+encodeURIComponent(d)+"; expires="+h+"; path=/; SameSite=Lax"}function i(u){const d=document.cookie.match(new RegExp("(^| )"+u+"=([^;]+)"));return d?decodeURIComponent(d[2]):null}const a=[{prefKey:"analytics",signals:["analytics_storage"]},{prefKey:"marketing",signals:["ad_storage","ad_user_data","ad_personalization"]},{prefKey:"functional",signals:["functionality_storage","security_storage","personalization_storage"]}];function o(u){const d={};return a.forEach(({prefKey:f,signals:h})=>{const m=u[f]?"granted":"denied";h.forEach(p=>{d[p]=m})}),d}function l(u){r("consent","update",o(u))}class c{constructor(){this.preferences=this.loadPreferences(),this.init()}init(){this.injectStyles(),this.hasUserConsented()?(l(this.preferences),this.applyConsent()):this.showBanner(),this.addSettingsLink()}injectStyles(){if(document.getElementById("cookie-consent-styles"))return;const d=document.createElement("style");d.id="cookie-consent-styles",d.textContent=e.css,document.head.appendChild(d)}hasUserConsented(){const d=i(t);if(!d)return!1;try{return!!JSON.parse(d).preferences}catch{return!1}}loadPreferences(){const d=i(t);if(d)try{return JSON.parse(d).preferences}catch{}return{necessary:!0,analytics:!1,marketing:!1,functional:!1}}savePreferences(d){d.necessary=!0,n(t,JSON.stringify({preferences:d,timestamp:new Date().toISOString()}),e.consentExpiryDays),this.recordConsent(d)}recordConsent(d){e.endpoint&&fetch(e.endpoint,{method:"POST",headers:{"Content-Type":"application/json","X-Consent-Token":e.token},body:JSON.stringify({preferences:d,consentVersion:e.consentVersion,timestamp:new Date().toISOString()})}).catch(()=>{})}showBanner(){if(document.getElementById("cookie-banner"))return;const d=document.createElement("div");d.id="cookie-banner",d.className="cookie-banner",d.innerHTML='<div class="cookie-banner-content"><div class="cookie-banner-text"><h2>'+e.bannerTitle+"</h2><p>"+e.bannerDescription+"</p>"+(e.privacyUrl?'<a href="'+e.privacyUrl+'" target="_blank">Privacy Policy</a>':"")+'</div><div class="cookie-banner-actions"><button class="cookie-btn cookie-btn-tertiary" id="reject-btn">Reject Optional</button><button class="cookie-btn cookie-btn-secondary" id="customize-btn">Customize</button><button class="cookie-btn cookie-btn-primary" id="accept-all-btn">Accept All</button></div></div>',document.body.appendChild(d),document.getElementById("accept-all-btn").onclick=()=>this.acceptAll(),document.getElementById("reject-btn").onclick=()=>this.rejectOptional(),document.getElementById("customize-btn").onclick=()=>this.showPreferences()}showPreferences(){let d=document.getElementById("cookie-overlay");d||(d=document.createElement("div"),d.id="cookie-overlay",d.className="preference-overlay",d.onclick=h=>{h.target===d&&this.closePreferences()},document.body.appendChild(d));let f=document.getElementById("cookie-preferences");f||(f=document.createElement("div"),f.id="cookie-preferences",f.className="cookie-preference-panel",f.innerHTML='<div class="preference-header"><h2>Cookie Preferences</h2><button class="preference-close" id="prefs-close-btn">&times;</button></div><div id="prefs-categories"></div><div class="preference-footer"><button class="save-btn" id="prefs-save-btn">Save Preferences</button><button class="close-btn" id="prefs-cancel-btn">Cancel</button></div>',document.body.appendChild(f),document.getElementById("prefs-close-btn").onclick=document.getElementById("prefs-cancel-btn").onclick=()=>this.closePreferences(),document.getElementById("prefs-save-btn").onclick=()=>{const h={};e.categories.forEach(m=>{const p=document.getElementById("toggle-"+m.toLowerCase());h[m.toLowerCase()]=m==="NECESSARY"?!0:p?p.checked:!1}),this.preferences=h,this.saveAndClose()}),this.renderPreferences()}renderPreferences(){const d=document.getElementById("prefs-categories");d.innerHTML="",e.categories.forEach(f=>{const h=f==="NECESSARY"?!0:this.preferences[f.toLowerCase()],m=e.cookies.filter(x=>x.category===f),p=document.createElement("div");p.className="category-section";let b="";if(m.forEach(x=>{b+='<div class="cookie-item"><div class="cookie-item-name">'+x.name+'</div><div class="cookie-item-provider">Provider: '+x.provider+'</div><div class="cookie-item-details">'+x.description+" (Duration: "+x.duration+")</div></div>"}),p.innerHTML='<div class="category-header"><h3>'+f.charAt(0)+f.slice(1).toLowerCase()+'</h3><label class="toggle-switch '+(h?"active":"")+'"><input type="checkbox" id="toggle-'+f.toLowerCase()+'" '+(h?"checked":"")+(f==="NECESSARY"?" disabled":"")+' /></label></div><div class="category-description">'+(f==="NECESSARY"?"Required cookies. Always enabled.":"Optional cookies for "+f.toLowerCase()+" purposes.")+'</div><div class="cookie-list">'+b+"</div>",d.appendChild(p),f!=="NECESSARY"){const x=p.querySelector(".toggle-switch"),y=p.querySelector("input");x.onclick=k=>{k.preventDefault(),y.checked=!y.checked,x.classList.toggle("active",y.checked)}}})}acceptAll(){this.preferences={necessary:!0,analytics:!0,marketing:!0,functional:!0},this.saveAndClose()}rejectOptional(){this.preferences={necessary:!0,analytics:!1,marketing:!1,functional:!1},this.saveAndClose()}closePreferences(){document.getElementById("cookie-preferences")?.remove(),document.getElementById("cookie-overlay")?.remove()}saveAndClose(){this.savePreferences(this.preferences),document.getElementById("cookie-banner")?.remove(),this.closePreferences(),this.applyConsent()}applyConsent(){l(this.preferences)}addSettingsLink(){if(document.getElementById("cookie-settings-link"))return;const d=document.querySelector("footer")||document.body,f=document.createElement("a");f.id="cookie-settings-link",f.href="#",f.textContent="Cookie Settings",f.style.cursor="pointer",f.onclick=h=>{h.preventDefault(),this.showBanner()},d.appendChild(f)}}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",()=>new c):new c})(CONFIG);
+
+    init() {
+      this.injectStyles();
+
+      if (this.hasUserConsented()) {
+        updateGoogleConsent(this.preferences);
+        this.applyConsent();
+      } else {
+        this.showBanner();
+      }
+
+      this.addSettingsLink();
+    }
+
+    injectStyles() {
+      if (document.getElementById('cookie-consent-styles')) return;
+      const style = document.createElement('style');
+      style.id = 'cookie-consent-styles';
+      style.textContent = CONFIG.css;
+      document.head.appendChild(style);
+    }
+
+    hasUserConsented() {
+      const stored = getCookie(COOKIE_NAME);
+      if (!stored) return false;
+      try {
+        const data = JSON.parse(stored);
+        return Boolean(data.preferences);
+      } catch {
+        return false;
+      }
+    }
+
+    loadPreferences() {
+      const stored = getCookie(COOKIE_NAME);
+      if (stored) {
+        try {
+          const data = JSON.parse(stored);
+          return data.preferences;
+        } catch {
+          // fallback to defaults
+        }
+      }
+      return {
+        necessary: true,
+        analytics: false,
+        marketing: false,
+        functional: false,
+      };
+    }
+
+    savePreferences(prefs) {
+      prefs.necessary = true;
+
+      setCookie(
+        COOKIE_NAME,
+        JSON.stringify({
+          preferences: prefs,
+          timestamp: new Date().toISOString(),
+        }),
+        CONFIG.consentExpiryDays
+      );
+      this.recordConsent(prefs);
+    }
+
+    recordConsent(prefs) {
+      if (!CONFIG.endpoint) return;
+
+      fetch(CONFIG.endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Consent-Token': CONFIG.token,
+        },
+        body: JSON.stringify({
+          preferences: prefs,
+          consentVersion: CONFIG.consentVersion,
+          timestamp: new Date().toISOString(),
+        }),
+      }).catch(() => {});
+    }
+
+    showBanner() {
+      if (document.getElementById('cookie-banner')) return;
+
+      const banner = document.createElement('div');
+      banner.id = 'cookie-banner';
+      banner.className = 'cookie-banner';
+      banner.innerHTML =
+        '<div class="cookie-banner-content">' +
+        '<div class="cookie-banner-text">' +
+        '<h2>' +
+        CONFIG.bannerTitle +
+        '</h2>' +
+        '<p>' +
+        CONFIG.bannerDescription +
+        '</p>' +
+        (CONFIG.privacyUrl
+          ? '<a href="' +
+            CONFIG.privacyUrl +
+            '" target="_blank">Privacy Policy</a>'
+          : '') +
+        '</div>' +
+        '<div class="cookie-banner-actions">' +
+        '<button class="cookie-btn cookie-btn-tertiary" id="reject-btn">Reject Optional</button>' +
+        '<button class="cookie-btn cookie-btn-secondary" id="customize-btn">Customize</button>' +
+        '<button class="cookie-btn cookie-btn-primary" id="accept-all-btn">Accept All</button>' +
+        '</div>' +
+        '</div>';
+
+      document.body.appendChild(banner);
+
+      document.getElementById('accept-all-btn').onclick = () =>
+        this.acceptAll();
+      document.getElementById('reject-btn').onclick = () =>
+        this.rejectOptional();
+      document.getElementById('customize-btn').onclick = () =>
+        this.showPreferences();
+    }
+
+    showPreferences() {
+      let overlay = document.getElementById('cookie-overlay');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'cookie-overlay';
+        overlay.className = 'preference-overlay';
+        overlay.onclick = e => {
+          if (e.target === overlay) this.closePreferences();
+        };
+        document.body.appendChild(overlay);
+      }
+
+      let panel = document.getElementById('cookie-preferences');
+      if (!panel) {
+        panel = document.createElement('div');
+        panel.id = 'cookie-preferences';
+        panel.className = 'cookie-preference-panel';
+        panel.innerHTML =
+          '<div class="preference-header">' +
+          '<h2>Cookie Preferences</h2>' +
+          '<button class="preference-close" id="prefs-close-btn">&times;</button>' +
+          '</div>' +
+          '<div id="prefs-categories"></div>' +
+          '<div class="preference-footer">' +
+          '<button class="save-btn" id="prefs-save-btn">Save Preferences</button>' +
+          '<button class="close-btn" id="prefs-cancel-btn">Cancel</button>' +
+          '</div>';
+
+        document.body.appendChild(panel);
+
+        document.getElementById('prefs-close-btn').onclick =
+          document.getElementById('prefs-cancel-btn').onclick = () =>
+            this.closePreferences();
+
+        document.getElementById('prefs-save-btn').onclick = () => {
+          const prefs = {};
+          CONFIG.categories.forEach(cat => {
+            const toggle = document.getElementById(
+              'toggle-' + cat.toLowerCase()
+            );
+            prefs[cat.toLowerCase()] =
+              cat === 'NECESSARY' ? true : toggle ? toggle.checked : false;
+          });
+          this.preferences = prefs;
+          this.saveAndClose();
+        };
+      }
+      this.renderPreferences();
+    }
+
+    renderPreferences() {
+      const container = document.getElementById('prefs-categories');
+      container.innerHTML = '';
+
+      CONFIG.categories.forEach(cat => {
+        const pref =
+          cat === 'NECESSARY' ? true : this.preferences[cat.toLowerCase()];
+        const cookiesInCategory = CONFIG.cookies.filter(
+          c => c.category === cat
+        );
+
+        const div = document.createElement('div');
+        div.className = 'category-section';
+
+        let cookieItemsHtml = '';
+        cookiesInCategory.forEach(c => {
+          cookieItemsHtml +=
+            '<div class="cookie-item">' +
+            '<div class="cookie-item-name">' +
+            c.name +
+            '</div>' +
+            '<div class="cookie-item-provider">Provider: ' +
+            c.provider +
+            '</div>' +
+            '<div class="cookie-item-details">' +
+            c.description +
+            ' (Duration: ' +
+            c.duration +
+            ')</div>' +
+            '</div>';
+        });
+
+        div.innerHTML =
+          '<div class="category-header">' +
+          '<h3>' +
+          cat.charAt(0) +
+          cat.slice(1).toLowerCase() +
+          '</h3>' +
+          '<label class="toggle-switch ' +
+          (pref ? 'active' : '') +
+          '">' +
+          '<input type="checkbox" id="toggle-' +
+          cat.toLowerCase() +
+          '" ' +
+          (pref ? 'checked' : '') +
+          (cat === 'NECESSARY' ? ' disabled' : '') +
+          ' />' +
+          '</label>' +
+          '</div>' +
+          '<div class="category-description">' +
+          (cat === 'NECESSARY'
+            ? 'Required cookies. Always enabled.'
+            : 'Optional cookies for ' + cat.toLowerCase() + ' purposes.') +
+          '</div>' +
+          '<div class="cookie-list">' +
+          cookieItemsHtml +
+          '</div>';
+
+        container.appendChild(div);
+
+        if (cat !== 'NECESSARY') {
+          const toggleLabel = div.querySelector('.toggle-switch');
+          const toggleInput = div.querySelector('input');
+          toggleLabel.onclick = e => {
+            e.preventDefault();
+            toggleInput.checked = !toggleInput.checked;
+            toggleLabel.classList.toggle('active', toggleInput.checked);
+          };
+        }
+      });
+    }
+
+    acceptAll() {
+      this.preferences = {
+        necessary: true,
+        analytics: true,
+        marketing: true,
+        functional: true,
+      };
+      this.saveAndClose();
+    }
+
+    rejectOptional() {
+      this.preferences = {
+        necessary: true,
+        analytics: false,
+        marketing: false,
+        functional: false,
+      };
+      this.saveAndClose();
+    }
+
+    closePreferences() {
+      document.getElementById('cookie-preferences')?.remove();
+      document.getElementById('cookie-overlay')?.remove();
+    }
+
+    saveAndClose() {
+      this.savePreferences(this.preferences);
+      document.getElementById('cookie-banner')?.remove();
+      this.closePreferences();
+      this.applyConsent();
+    }
+
+    applyConsent() {
+      updateGoogleConsent(this.preferences);
+    }
+
+    addSettingsLink() {
+      if (document.getElementById('cookie-settings-link')) return;
+      const footer = document.querySelector('footer') || document.body;
+
+      const link = document.createElement('a');
+      link.id = 'cookie-settings-link';
+      link.href = '#';
+      link.textContent = 'Cookie Settings';
+      link.style.cursor = 'pointer';
+      link.onclick = e => {
+        e.preventDefault();
+        this.showBanner();
+      };
+      footer.appendChild(link);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new CookieConsent());
+  } else {
+    new CookieConsent();
+  }
+})(CONFIG);
   })();
 </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-93DNX0CXMC"></script>
