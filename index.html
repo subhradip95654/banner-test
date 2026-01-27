@@ -164,6 +164,7 @@
           'Content-Type': 'application/json',
           'X-Consent-Token': CONFIG.token,
         },
+        credentials: 'omit',
         body: JSON.stringify({
           preferences: prefs,
           consentVersion: CONFIG.consentVersion,
