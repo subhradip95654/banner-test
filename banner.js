@@ -1,0 +1,268 @@
+(function() {
+    window.dataLayer = window.dataLayer || [];
+    window.__KAWACH_PREVIEW__ = false;
+    function gtag() { window.dataLayer.push(arguments); }
+
+    gtag('consent', 'default', {"ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied","analytics_storage":"denied","functionality_storage":"denied","security_storage":"denied","personalization_storage":"denied","wait_for_update":500});
+
+    const CONFIG = {"token":"U0ZNeU5UWS5nMmdEZEFBQUFBSnRBQUFBQzJSdmJXRnBibDl1WVcxbGJRQUFBQXByY21WbGRHa3VZMjl0YlFBQUFBOXZjbWRoYm1sNllYUnBiMjVmYVdSdEFBQUFKREpsWkdaaVptWTJMVGcxTXpNdE5HRmxPQzFpWTJVM0xUWTVPVGRsWldZME0yTTVPVzRHQU9qT2lMV2JBV0lKWmdHQS5MZEJPcndiRmpjLS0ydjV0TU4wSDJpQXhkbWJkU19JSHNVQTg0QVpXamdV","themeColor":"#4a90e2","bannerTitle":"Kreeti Cookie Banner","bannerDescription":"Kreeti Domain Cookie Banner Description","privacyUrl":null,"endpoint":"https://staging.kawach.ai/api/cookie_consent","consentExpiryDays":365,"categories":["NECESSARY","ANALYTICS","MARKETING","FUNCTIONAL"],"consentVersion":1,"css":"\n  .cookie-banner {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    background: #0f172a;\n    color: #e5e7eb;\n    padding: 20px 24px;\n    z-index: 9999;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  }\n\n  .cookie-banner-content {\n    max-width: 1300px;\n    margin: 0 auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 24px;\n  }\n\n  .cookie-banner-text h2 {\n    margin: 0 0 6px 0;\n    font-size: 16px;\n    font-weight: 600;\n    color: #ffffff;\n  }\n\n  .cookie-banner-text p {\n    margin: 0;\n    font-size: 14px;\n    color: #cbd5f5;\n    line-height: 1.5;\n  }\n\n  .cookie-banner-text a {\n    color: #4a90e2;\n    text-decoration: underline;\n  }\n\n  .cookie-banner-actions {\n    display: flex;\n    align-items: center;\n    gap: 20px;\n    flex-shrink: 0;\n  }\n\n  .cookie-btn {\n    font-size: 14px;\n    font-weight: 500;\n    cursor: pointer;\n    border: none;\n    background: none;\n    padding: 0;\n  }\n\n  .cookie-btn-primary {\n    background: #4a90e2;\n    color: #ffffff;\n    padding: 10px 20px;\n    border-radius: 9999px;\n    font-weight: 600;\n  }\n\n  .cookie-btn-primary:hover {\n    opacity: 0.95;\n  }\n\n  .cookie-btn-secondary {\n    color: color-mix(in srgb, #4a90e2 75%, white);\n  }\n\n  .cookie-btn-secondary:hover {\n    text-decoration: underline;\n  }\n\n  .cookie-btn-tertiary {\n    color: #000000;\n    background-color: #c4cacf;\n    padding: 10px 20px;\n    border-radius: 9999px;\n  }\n\n  .cookie-btn-tertiary:hover {\n    opacity: 0.95;\n  }\n\n  .preference-overlay {\n    position: fixed;\n    inset: 0;\n    background: rgba(0, 0, 0, 0.55);\n    z-index: 9998;\n  }\n\n  .cookie-preference-panel {\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%) scale(0.96);\n    width: 480px;\n    max-width: calc(100vw - 40px);\n    max-height: calc(100vh - 80px);\n    background: #ffffff;\n    border-radius: 16px;\n    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);\n    z-index: 10000;\n    overflow-y: auto;\n    padding: 32px;\n    animation: popupIn 0.25s ease-out forwards;\n  }\n\n  @keyframes popupIn {\n    from { opacity: 0; transform: translate(-50%, -50%) scale(0.94); }\n    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }\n  }\n\n  .preference-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 28px;\n  }\n\n  .preference-header h2 {\n    margin: 0;\n    font-size: 22px;\n    font-weight: 600;\n    color: #111;\n  }\n\n  .preference-close {\n    background: none;\n    border: none;\n    font-size: 28px;\n    cursor: pointer;\n    color: #999;\n  }\n\n  .category-section {\n    margin-bottom: 0;\n    padding-bottom: 24px;\n    border-bottom: 1px solid #e5e7eb;\n  }\n\n  .category-section:last-child {\n    border-bottom: none;\n    padding-bottom: 0;\n  }\n\n  .category-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 8px;\n  }\n\n  .category-header h3 {\n    margin: 0;\n    font-size: 15px;\n    font-weight: 600;\n    color: #111;\n  }\n\n  .category-description {\n    font-size: 13px;\n    color: #666;\n    margin-bottom: 12px;\n  }\n\n  .toggle-switch {\n    width: 50px;\n    height: 28px;\n    background: #d1d5db;\n    border-radius: 9999px;\n    position: relative;\n    cursor: pointer;\n    transition: background 0.2s;\n    --toggle-color: #4a90e2;\n    margin-top: 4px;\n  }\n\n  .toggle-switch::after {\n    content: '';\n    position: absolute;\n    width: 24px;\n    height: 24px;\n    background: #ffffff;\n    border-radius: 50%;\n    top: 2px;\n    left: 2px;\n    transition: transform 0.2s;\n  }\n\n  .toggle-switch.active {\n    background: var(--toggle-color);\n  }\n\n  .toggle-switch.active::after {\n    transform: translateX(22px);\n  }\n\n  .toggle-switch.necessary-disabled {\n    background: var(--toggle-color);\n    cursor: not-allowed;\n    opacity: 0.65;\n  }\n\n  .toggle-switch.necessary-disabled::after {\n    transform: translateX(22px);\n  }\n\n  .required-tag {\n    display: inline-block;\n    background-color: #22c55e;\n    color: #fff;\n    font-size: 11px;\n    font-weight: 600;\n    padding: 2px 6px;\n    border-radius: 4px;\n    margin-left: 8px;\n    vertical-align: middle;\n  }\n\n  .preference-footer {\n    display: flex;\n    flex-direction: column;\n    gap: 12px;\n    margin-top: 32px;\n    padding-top: 24px;\n    border-top: 1px solid #e5e7eb;\n  }\n\n  .save-btn {\n    flex: none;\n    background: #4a90e2;\n    color: #ffffff;\n    padding: 12px;\n    border-radius: 8px;\n    font-weight: 600;\n    border: none;\n    cursor: pointer;\n  }\n\n  .save-btn:hover {\n    opacity: 0.95;\n  }\n\n  #powered-by-kawach {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n    margin-top: 12px;\n    gap: 4px;\n  }\n\n  #powered-by-kawach::before {\n    content: 'Powered by';\n    font-size: 12px;\n    color: #666;\n  }\n\n  #powered-by-kawach img {\n    height: 19px;\n  }\n\n  @media (max-width: 768px) {\n    .cookie-banner-content {\n      flex-direction: column;\n      align-items: flex-start;\n    }\n\n    .cookie-banner-actions {\n      width: 100%;\n      justify-content: space-between;\n    }\n\n    .cookie-preference-panel {\n      width: calc(100vw - 24px);\n      max-height: calc(100vh - 24px);\n      padding: 24px;\n      border-radius: 12px;\n    }\n  }\n"};
+    (CONFIG => {
+  const IS_PREVIEW = window.__KAWACH_PREVIEW__;
+  const COOKIE_NAME = 'cookie_consent_' + CONFIG.token;
+
+  function gtag() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(arguments);
+  }
+
+  function setCookie(name, value, days) {
+    if (IS_PREVIEW) return;
+
+    const expires = new Date(Date.now() + days * 86400000).toUTCString();
+    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Lax';
+  }
+
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? decodeURIComponent(match[2]) : null;
+  }
+
+  const GOOGLE_CONSENT_MAP = [
+    { prefKey: 'analytics', signals: ['analytics_storage'] },
+    { prefKey: 'marketing', signals: ['ad_storage', 'ad_user_data', 'ad_personalization'] },
+    { prefKey: 'functional', signals: ['functionality_storage', 'security_storage', 'personalization_storage'] },
+  ];
+
+  function buildGoogleConsentPayload(preferences) {
+    const payload = {};
+    GOOGLE_CONSENT_MAP.forEach(({ prefKey, signals }) => {
+      const value = preferences[prefKey] ? 'granted' : 'denied';
+      signals.forEach(signal => payload[signal] = value);
+    });
+    return payload;
+  }
+
+  function updateGoogleConsent(preferences) {
+    gtag('consent', 'update', buildGoogleConsentPayload(preferences));
+  }
+
+  class CookieConsent {
+    constructor() {
+      this.preferences = this.loadPreferences();
+      this.init();
+    }
+
+    init() {
+      this.injectStyles();
+      if (this.hasUserConsented()) {
+        updateGoogleConsent(this.preferences);
+        this.applyConsent();
+      } else {
+        this.showBanner();
+      }
+      this.addSettingsLink();
+    }
+
+    injectStyles() {
+      if (document.getElementById('cookie-consent-styles')) return;
+      const style = document.createElement('style');
+      style.id = 'cookie-consent-styles';
+      style.textContent = CONFIG.css;
+      document.head.appendChild(style);
+    }
+
+    hasUserConsented() {
+      if (IS_PREVIEW) return false;
+
+      const stored = getCookie(COOKIE_NAME);
+      if (!stored) return false;
+      try {
+        const data = JSON.parse(stored);
+        return Boolean(data.preferences);
+      } catch {
+        return false;
+      }
+    }
+
+    loadPreferences() {
+      const stored = getCookie(COOKIE_NAME);
+      if (stored) {
+        try {
+          const data = JSON.parse(stored);
+          return data.preferences;
+        } catch {}
+      }
+      return {
+        necessary: true,
+        analytics: false,
+        marketing: false,
+        functional: false,
+      };
+    }
+
+    savePreferences(prefs) {
+      prefs.necessary = true;
+      setCookie(
+        COOKIE_NAME,
+        JSON.stringify({ preferences: prefs, timestamp: new Date().toISOString() }),
+        CONFIG.consentExpiryDays
+      );
+      this.recordConsent(prefs);
+    }
+
+    recordConsent(prefs) {
+      if (!CONFIG.endpoint || IS_PREVIEW) return;
+
+      fetch(CONFIG.endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Consent-Token': CONFIG.token,
+        },
+        body: JSON.stringify({
+          preferences: prefs,
+          consentVersion: CONFIG.consentVersion,
+          timestamp: new Date().toISOString(),
+        }),
+      }).catch(() => {});
+    }
+
+    showBanner() {
+      if (document.getElementById('cookie-banner')) return;
+      const banner = document.createElement('div');
+      banner.id = 'cookie-banner';
+      banner.className = 'cookie-banner';
+      banner.innerHTML =
+        '<div class="cookie-banner-content">' +
+        '<div class="cookie-banner-text">' +
+        '<h2>' + CONFIG.bannerTitle + '</h2>' +
+        '<p>' + CONFIG.bannerDescription + '</p>' +
+        (CONFIG.privacyUrl ? '<a href="' + CONFIG.privacyUrl + '" target="_blank">Privacy Policy</a>' : '') +
+        '</div>' +
+        '<div class="cookie-banner-actions">' +
+        '<button class="cookie-btn cookie-btn-secondary" id="customize-btn">Manage preferences</button>' +
+        '<button class="cookie-btn cookie-btn-tertiary" id="reject-btn">Reject optional</button>' +
+        '<button class="cookie-btn cookie-btn-primary" id="accept-all-btn">Accept all</button>' +
+        '</div>' +
+        '</div>';
+      document.body.appendChild(banner);
+      document.getElementById('accept-all-btn').onclick = () => this.acceptAll();
+      document.getElementById('reject-btn').onclick = () => this.rejectOptional();
+      document.getElementById('customize-btn').onclick = () => this.showPreferences();
+    }
+
+    showPreferences() {
+      let overlay = document.getElementById('cookie-overlay');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'cookie-overlay';
+        overlay.className = 'preference-overlay';
+        overlay.onclick = e => { if (e.target === overlay) this.closePreferences(); };
+        document.body.appendChild(overlay);
+      }
+
+      let panel = document.getElementById('cookie-preferences');
+      if (!panel) {
+        panel = document.createElement('div');
+        panel.id = 'cookie-preferences';
+        panel.className = 'cookie-preference-panel';
+        panel.innerHTML =
+          '<div class="preference-header">' +
+          '<h2>Preference Center</h2>' +
+          '<button class="preference-close" id="prefs-close-btn">&times;</button>' +
+          '</div>' +
+          '<div id="prefs-categories"></div>' +
+          '<div class="preference-footer">' +
+          '<button class="save-btn" id="prefs-save-btn">Save Preferences</button>' +
+          '<div id="powered-by-kawach"><img src="https://www.kawach.ai/images/kawach-logo.svg" class="kawach-logo" /></div>' +
+          '</div>';
+        document.body.appendChild(panel);
+        document.getElementById('prefs-close-btn').onclick = () => this.closePreferences();
+        document.getElementById('prefs-save-btn').onclick = () => {
+          const prefs = {};
+          CONFIG.categories.forEach(cat => {
+            const toggle = document.querySelector('[data-category="' + cat.toLowerCase() + '"]');
+            prefs[cat.toLowerCase()] = cat === 'NECESSARY' ? true : toggle.classList.contains('active');
+          });
+          this.preferences = prefs;
+          this.saveAndClose();
+        };
+      }
+      this.renderPreferences();
+    }
+
+    renderPreferences() {
+      const container = document.getElementById('prefs-categories');
+      container.innerHTML = '';
+      CONFIG.categories.forEach(cat => {
+        const pref = cat === 'NECESSARY' ? true : this.preferences[cat.toLowerCase()];
+        const div = document.createElement('div');
+        div.className = 'category-section';
+        div.innerHTML =
+          '<div class="category-header">' +
+          '<h3>' + cat.charAt(0) + cat.slice(1).toLowerCase() + '</h3>' +
+          (cat === 'NECESSARY' ? '<span class="required-tag">Required</span>' : '<div class="toggle-switch ' + (pref ? 'active' : '') + '" data-category="' + cat.toLowerCase() + '"></div>') +
+          '</div>' +
+          '<div class="category-description">' +
+          (cat === 'NECESSARY' ? 'These cookies are essential so that you can move around the website and use its features. Without these cookies, services you have asked for cannot be provided.' :
+           cat === 'ANALYTICS' ? 'These cookies track user behaviour on the website, such as pages visited, duration of time spent on a page, and what users are doing on a page.' :
+           cat === 'MARKETING' ? 'These cookies are set through our site by our advertising partners and can help identify users in order to show relevant material.' :
+           'These cookies allow the website to remember choices you make, such as language, region, or display preferences.') +
+          '</div>';
+        container.appendChild(div);
+        if (cat !== 'NECESSARY') {
+          const toggle = div.querySelector('.toggle-switch');
+          toggle.onclick = () => {
+            toggle.classList.toggle('active');
+            this.preferences[cat.toLowerCase()] = toggle.classList.contains('active');
+          };
+        }
+      });
+    }
+
+    acceptAll() {
+      this.preferences = { necessary: true, analytics: true, marketing: true, functional: true };
+      this.saveAndClose();
+    }
+
+    rejectOptional() {
+      this.preferences = { necessary: true, analytics: false, marketing: false, functional: false };
+      this.saveAndClose();
+    }
+
+    closePreferences() {
+      document.getElementById('cookie-preferences')?.remove();
+      document.getElementById('cookie-overlay')?.remove();
+    }
+
+    saveAndClose() {
+      this.savePreferences(this.preferences);
+      document.getElementById('cookie-banner')?.remove();
+      this.closePreferences();
+      this.applyConsent();
+    }
+
+    applyConsent() {
+      updateGoogleConsent(this.preferences);
+    }
+
+    addSettingsLink() {
+      const trigger = document.getElementById('cookie-settings-slot');
+      if (!trigger) return;
+
+      trigger.style.cursor = 'pointer';
+
+      trigger.addEventListener('click', e => {
+        e.preventDefault();
+        this.showPreferences();
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new CookieConsent());
+  } else {
+    new CookieConsent();
+  }
+})(CONFIG);
+  })();
