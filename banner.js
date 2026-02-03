@@ -1,4 +1,3 @@
-<script>
 (function() {
     window.dataLayer = window.dataLayer || [];
     window.__KAWACH_PREVIEW__ = false;
@@ -267,5 +266,3 @@
   }
 })(CONFIG);
   })();
-
-</script>
