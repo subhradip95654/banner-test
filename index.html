@@ -1,18 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>A Meaningful Page Title</title>
-  </head>
-  <body>
-    <p>The content of the body element is displayed in the browser window.</p>
-    <p>
-      The content of the title element is displayed in the browser tab, in
-      favorites and in search-engine results.
-    </p>
-    <div id="cookie-settings-slot">settings Link</div>
 
-<!-- Kawach Cookie Consent Script (Generated 2026-01-29T05:30:03.659Z) -->
-<script src="banner.js"> </script>
+<head>
+  <title>A Meaningful Page Title</title>
+
+  <script>
+    window.kawach_cookie_banner_config = {
+      "token": "EU9K_xxS_gF33_24S5v0RUeXErDfUQs1jPIOnXp0NXrmlcpmaHnoccUTMYHZmstWZ1FmVXAkKguOF4c_htXFYQ==",
+      "bannerTitle": "We value your privacy",
+      "bannerDescription": "We use cookies to improve your experience.",
+      "privacyUrl": null,
+      "endpoint": "http://localhost:3000/api/cookie_consent",
+      "consentExpiryDays": 365,
+      "categories": [
+        "NECESSARY",
+        "ANALYTICS",
+        "MARKETING",
+        "FUNCTIONAL"
+      ],
+      "consentVersion": 1,
+      "customStyle": {
+        "bannerBgColor": "#FFFFFF",
+        "primaryColor": "#155265",
+        "secondaryColor": "#F8F9FA",
+        "textColor": "#212529"
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <p>The content of the body element is displayed in the browser window.</p>
+  <p>
+    The content of the title element is displayed in the browser tab, in
+    favorites and in search-engine results.
+  </p>
+  <div id="cookie-settings-slot">settings Link</div>
+
+  <!-- Kawach Cookie Consent Script (Generated 2026-01-29T05:30:03.659Z) -->
+  <!-- <script src="banner.js"> </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DBK2D9DLSL"></script>
 
 <script>
@@ -21,6 +47,11 @@
   gtag('js', new Date());
   gtag('config', 'G-DBK2D9DLSL');
   gtag('config', 'AW-17877054822');
-</script>
-  </body>
+</script> -->
+
+  <script src="https://kawach-staging-images.s3.ap-south-1.amazonaws.com/cookie_banner/v2.0.0.js"></script>
+
+
+</body>
+
 </html>
