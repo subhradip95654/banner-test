@@ -1,57 +1,318 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>A Meaningful Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Coffee Harvest: Estate Escape</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            touch-action: manipulation;
+            background-color: #2d241e;
+            color: #f3e5ab;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
 
-  <script>
-  window.kawach_cookie_banner_config = {
-  "token": "Vh45BC17zq5DZ3Z1pMvpp-R_v1z6Ud-6MznrhNKmB3lZgKBoiYzpUbnamOmTfpnmu6gclgvy4xpF3UDSrWN-hA==",
-  "bannerTitle": "We value your privacy",
-  "bannerDescription": "We use cookies to improve your experience.",
-  "privacyUrl": null,
-  "endpoint": "https://staging.kawach.ai/api/cookie_consent",
-  "consentExpiryDays": 365,
-  "categories": [
-    "NECESSARY",
-    "ANALYTICS",
-    "MARKETING",
-    "FUNCTIONAL"
-  ],
-  "consentVersion": 1,
-  "customStyle": {
-    "bannerBgColor": "#FFFFFF",
-    "primaryColor": "#155265",
-    "secondaryColor": "#F8F9FA",
-    "textColor": "#212529"
-  }
-};
-</script>
+        .game-container {
+            max-width: 600px;
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            padding: 15px;
+            flex-grow: 1;
+            align-content: start;
+            overflow-y: auto;
+        }
+
+        .bush {
+            aspect-ratio: 1 / 1;
+            position: relative;
+            cursor: pointer;
+            perspective: 1000px;
+        }
+
+        .bush-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s;
+            transform-style: preserve-3d;
+        }
+
+        .bush.revealed .bush-inner {
+            transform: rotateY(180deg);
+        }
+
+        .bush-front, .bush-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bush-front {
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border: 2px solid #388e3c;
+        }
+
+        .bush-back {
+            background-color: #3e2723;
+            transform: rotateY(180deg);
+            border: 2px solid #5d4037;
+        }
+
+        /* SVG Icons */
+        .icon { width: 70%; height: 70%; }
+        
+        .leaf-icon { fill: #81c784; opacity: 0.8; }
+        .bean-icon { fill: #795548; filter: drop-shadow(0 2px 2px black); }
+        .manager-icon { fill: #ef5350; }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            background: #d4a373;
+            color: #2d241e;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            transition: transform 0.1s;
+            box-shadow: 0 4px 0 #a98467;
+        }
+
+        .btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #a98467;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 12px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-anim { animation: float 3s ease-in-out infinite; }
+    </style>
 </head>
-
 <body>
-  <p>The content of the body element is displayed in the browser window.</p>
-  <p>
-    The content of the title element is displayed in the browser tab, in
-    favorites and in search-engine results.
-  </p>
-  <div id="cookie-settings-slot">settings Link</div>
 
-  <!-- Kawach Cookie Consent Script (Generated 2026-01-29T05:30:03.659Z) -->
-  <!-- <script src="banner.js"> </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBK2D9DLSL"></script>
+<div class="game-container">
+    <!-- Header Stats -->
+    <div class="p-4 flex justify-between items-center bg-[#3e2723] shadow-lg">
+        <div class="stat-card">
+            <div class="text-xs uppercase opacity-70">Score</div>
+            <div id="score" class="text-xl font-bold text-yellow-400">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="text-xs uppercase opacity-70">Time</div>
+            <div id="timer" class="text-xl font-bold">0.0s</div>
+        </div>
+        <div class="stat-card">
+            <div class="text-xs uppercase opacity-70">Left</div>
+            <div id="remaining" class="text-xl font-bold">40</div>
+        </div>
+    </div>
+
+    <!-- Game Grid -->
+    <div id="grid" class="grid-container">
+        <!-- Generated by JS -->
+    </div>
+
+    <!-- UI Overlays -->
+    <div id="start-screen" class="overlay">
+        <h1 class="text-4xl font-bold mb-2 text-yellow-500">COFFEE HARVEST</h1>
+        <p class="mb-6 opacity-80">Collect 40 beans in record time.<br>Avoid the Estate Manager!</p>
+        <div class="w-24 h-24 mb-6 float-anim">
+            <svg viewBox="0 0 24 24" class="bean-icon"><path d="M12,2C8.69,2 6,4.69 6,8C6,11.31 8.69,14 12,14C15.31,14 18,11.31 18,8C18,4.69 15.31,2 12,2M12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12M12,16C7.58,16 4,19.58 4,24H6C6,20.69 8.69,18 12,18C15.31,18 18,20.69 18,24H20C20,19.58 16.42,16 12,16Z"/></svg>
+        </div>
+        <button class="btn" onclick="startGame()">START HARVEST</button>
+    </div>
+
+    <div id="game-over-screen" class="overlay hidden">
+        <h2 id="result-title" class="text-4xl font-bold mb-2 text-red-500">CAUGHT!</h2>
+        <p id="result-msg" class="mb-6">The manager found you trespassing.</p>
+        <div class="text-2xl mb-8">
+            Final Score: <span id="final-score" class="text-yellow-400 font-bold">0</span><br>
+            Time: <span id="final-time" class="text-white font-bold">0s</span>
+        </div>
+        <button class="btn" onclick="resetGame()">TRY AGAIN</button>
+    </div>
+</div>
 
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DBK2D9DLSL');
-  gtag('config', 'AW-17877054822');
-</script> -->
+    const CONFIG = {
+        totalBushes: 48,
+        totalBeans: 40,
+        managerCount: 5,
+        pointsPerBean: 10
+    };
 
-  <script src="https://kawach-staging-images.s3.ap-south-1.amazonaws.com/cookie_banner/v2.0.0.js"></script>
+    let score = 0;
+    let beansCollected = 0;
+    let startTime = null;
+    let timerInterval = null;
+    let gameActive = false;
+    let items = [];
 
-<div id="kawach_cookie_settings_slot">Cookie Settings</div>
+    const gridElement = document.getElementById('grid');
+    const scoreElement = document.getElementById('score');
+    const timerElement = document.getElementById('timer');
+    const remainingElement = document.getElementById('remaining');
+    const startScreen = document.getElementById('start-screen');
+    const gameOverScreen = document.getElementById('game-over-screen');
+
+    // SVGs as strings for performance
+    const ICON_LEAF = `<svg viewBox="0 0 24 24" class="icon leaf-icon"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/></svg>`;
+    const ICON_BEAN = `<svg viewBox="0 0 24 24" class="icon bean-icon"><path d="M18.88 12.18c-2.31-2.31-6.04-2.31-8.35 0-2.31 2.31-2.31 6.04 0 8.35 2.31 2.31 6.04 2.31 8.35 0 2.31-2.31 2.31-6.05 0-8.35zm-1.42 6.93c-1.53 1.53-4 1.53-5.53 0s-1.53-4 0-5.53 4-1.53 5.53 0 1.53 4.01 0 5.53zM8.35 11.65c2.31-2.31 2.31-6.04 0-8.35-2.31-2.31-6.04-2.31-8.35 0-2.31 2.31-2.31 6.04 0 8.35 2.31 2.31 6.04 2.31 8.35 0zm-1.42-6.93c1.53 1.53 1.53 4 0 5.53s-4 1.53-5.53 0-1.53-4 0-5.53 4-1.53 5.53 0z"/></svg>`;
+    const ICON_MANAGER = `<svg viewBox="0 0 24 24" class="icon manager-icon"><path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2.01 12,2M12,20C7.59,20 4,16.41 4,12C4,11.43 4.06,10.88 4.18,10.35C6.07,9.75 7.96,9.35 9.85,9.15C10.5,7.12 11.3,5.1 12.25,3.08C13.2,5.1 14,7.12 14.65,9.15C16.54,9.35 18.43,9.75 20.32,10.35C20.44,10.88 20.5,11.43 20.5,12C20.5,16.41 16.91,20 12,20Z"/></svg>`;
+
+    function initGrid() {
+        gridElement.innerHTML = '';
+        items = [];
+        
+        // Prepare contents
+        const contents = new Array(CONFIG.totalBushes).fill('empty');
+        for(let i=0; i < CONFIG.totalBeans; i++) contents[i] = 'bean';
+        for(let i=0; i < CONFIG.managerCount; i++) contents[CONFIG.totalBeans + i] = 'manager';
+        
+        // Shuffle
+        contents.sort(() => Math.random() - 0.5);
+
+        contents.forEach((type, index) => {
+            const bush = document.createElement('div');
+            bush.className = 'bush';
+            bush.dataset.type = type;
+            bush.dataset.index = index;
+            
+            bush.innerHTML = `
+                <div class="bush-inner">
+                    <div class="bush-front">${ICON_LEAF}</div>
+                    <div class="bush-back">
+                        ${type === 'bean' ? ICON_BEAN : type === 'manager' ? ICON_MANAGER : ''}
+                    </div>
+                </div>
+            `;
+
+            bush.addEventListener('click', () => handleTap(bush));
+            gridElement.appendChild(bush);
+            items.push({ element: bush, revealed: false, type: type });
+        });
+
+        remainingElement.innerText = CONFIG.totalBeans;
+    }
+
+    function startGame() {
+        initGrid();
+        startScreen.classList.add('hidden');
+        score = 0;
+        beansCollected = 0;
+        scoreElement.innerText = '0';
+        gameActive = true;
+        startTime = Date.now();
+        
+        timerInterval = setInterval(() => {
+            if(!gameActive) return;
+            const elapsed = (Date.now() - startTime) / 1000;
+            timerElement.innerText = elapsed.toFixed(1) + 's';
+        }, 100);
+    }
+
+    function handleTap(bush) {
+        if (!gameActive || bush.classList.contains('revealed')) return;
+
+        bush.classList.add('revealed');
+        const type = bush.dataset.type;
+
+        if (type === 'manager') {
+            endGame(false);
+        } else if (type === 'bean') {
+            score += CONFIG.pointsPerBean;
+            beansCollected++;
+            scoreElement.innerText = score;
+            remainingElement.innerText = CONFIG.totalBeans - beansCollected;
+            
+            if (beansCollected === CONFIG.totalBeans) {
+                endGame(true);
+            }
+        }
+    }
+
+    function endGame(victory) {
+        gameActive = false;
+        clearInterval(timerInterval);
+        
+        const finalTime = timerElement.innerText;
+        const resultTitle = document.getElementById('result-title');
+        const resultMsg = document.getElementById('result-msg');
+
+        if (victory) {
+            resultTitle.innerText = "SUCCESS!";
+            resultTitle.style.color = "#4ade80";
+            resultMsg.innerText = "You harvested all the beans safely!";
+        } else {
+            resultTitle.innerText = "CAUGHT!";
+            resultTitle.style.color = "#ef4444";
+            resultMsg.innerText = "The Estate Manager kicked you out.";
+            // Reveal all managers for clarity
+            items.forEach(item => {
+                if (item.type === 'manager') item.element.classList.add('revealed');
+            });
+        }
+
+        document.getElementById('final-score').innerText = score;
+        document.getElementById('final-time').innerText = finalTime;
+        
+        setTimeout(() => {
+            gameOverScreen.classList.remove('hidden');
+        }, 800);
+    }
+
+    function resetGame() {
+        gameOverScreen.classList.add('hidden');
+        startGame();
+    }
+
+    // Initialize display
+    remainingElement.innerText = CONFIG.totalBeans;
+</script>
+
 </body>
-
 </html>
